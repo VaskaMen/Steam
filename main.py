@@ -1,12 +1,15 @@
 import requests
-from currency import Currency
 import asyncio
-from steamPrice import SteamPrice
 from flask import Flask, render_template, request, jsonify
+
+from currency import Currency
+from steamPrice import SteamPrice
+from SteamDB import  SteamDB
 
 c = Currency()
 sp = SteamPrice()
-
+sdb = SteamDB()
+# sdb.add_list_game()
 
 app = Flask(__name__)
 @app.route("/", methods=["POST", "GET"])
@@ -48,11 +51,11 @@ def linkPrice():
 
             image = sp.getImage(link)
 
-            poluchiTRY = sp.getGameInfo(link, "TR")
-            poluchiRUB = sp.getGameInfo(link, "RU")
-            poluchiKZT = sp.getGameInfo(link, "KZ")
-            poluchiUSD = sp.getGameInfo(link,"US")
-            name_game = sp.getNameGame(link)
+            poluchiTRY = sdb.get_game_info(link, "TR")
+            poluchiRUB = sdb.get_game_info(link, "RU")
+            poluchiKZT = sdb.get_game_info(link, "KZ")
+            poluchiUSD = sdb.get_game_info(link,"US")
+            name_game = poluchiUSD['name']
 
             return jsonify({
             'status': 0,
