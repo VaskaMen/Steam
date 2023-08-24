@@ -1,0 +1,258 @@
+
+body {
+    margin: 0;
+    background: radial-gradient(130.18% 209.63% at 85.35% 0%, #10122B 0%, #15233E 27.52%, #3C597B 100%); 
+    background-size: cover;
+    background-repeat:no-repeat;
+    overscroll-behavior: none;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.loader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #15233e49;
+    
+    z-index: 1000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.cube{
+    width: 30px;
+    height: 30px;
+    animation: cybe 3s infinite;
+    background-color: #A8B9C3;
+}
+
+@keyframes cybe {
+    0% {transform: rotate(90deg) ;}
+    30% {transform: rotate(40deg) scale(3); border-radius: 10px;}
+    50% {transform: rotate(100deg);}
+    70% {transform: rotate(20deg) scale(2); border-radius: 5px;}
+    100% {transform: rotate(80deg) scale(1); border-radius: 0px;}
+}
+
+header {
+    background: rgba(0, 0, 0, 0.5);;
+    padding: 20px 0;
+    backdrop-filter: blur(10px);
+}
+
+.container {
+    padding: 0px 8vw;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.nav-item {
+    white-space: nowrap;
+    color: #C3CDD2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 575;
+    margin-right: 5vw;
+}
+
+.about{
+    padding: 8px 30px;
+    border: 3px solid #C3CDD2;
+    margin-top: -10px;
+    margin: 0;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    border-radius: 400px;
+    margin: 0 4vw;
+}
+
+.search-box input {
+    width: 40vw;
+    height: 35px;
+    background-color: #A8B9C3;
+    border: none;
+    font-size: 20px;
+    transition:background-color 0.3s;
+    outline: none;
+}
+
+.search-box input:hover{
+  background-color: #c4d8e3;
+}
+
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    background-color: #FFFFFF;
+    text-decoration: none;
+}
+
+.name{
+    margin: 20px 0;
+}
+
+.name p{
+    margin: 0;
+    color: #C3CDD2;
+    font-size: 50px;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    
+}
+
+.block-inner {
+    display: flex;
+    height: 60vh;
+    width: 84vw;
+    background: radial-gradient(101.11% 635.46% at 100% -1.79%, rgba(255, 255, 255, 0.12) 0%, rgba(179, 179, 179, 0.12) 100%)
+    
+}
+
+
+.imga {
+    height: 100%;
+    width: 70%;
+    background-size: cover;
+    background-position: center;
+}
+
+.rhalf {
+    width: 40%;
+    padding: 25px 40px;
+}
+
+.price {
+    background: radial-gradient(125.66% 436.01% at -3.16% 0%, rgba(52, 63, 79, 0.9) 0%, rgba(66, 81, 97, 0.763825) 13.67%, rgba(77, 96, 113, 0.648545) 24.33%, rgba(87, 105, 121, 0.608338) 38.77%, rgba(109, 126, 141, 0.51507) 55.33%, rgba(137, 152, 166, 0.398938) 63.12%, rgba(233, 243, 252, 0) 100%);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 25px 20px;
+    color: #D8D9DA;
+    
+}
+.cases {
+    margin-top: 10px;
+}
+
+.plash {
+    background: rgba(0, 0, 0, 0.57);
+    border-radius: 2px;
+    padding: 3px 3px 3px 5px;
+    margin: 4px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flag {
+    width: 50px;
+    height: 32px;
+}
+
+.nazwa {
+    margin-left: 5px;
+    width: 42%;
+}
+
+.cena {
+    text-align: center;
+    width: 40%;
+    background-color: black;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.usa {
+    background-image: url("../static/image/amerika.png");
+    background-size: cover;
+}
+
+.russia {
+    background-image: url("../static/image/download.png");
+    background-size: cover;
+}
+
+.turkey {
+    background-image: url("../static/image/download-1.png");
+    background-size: cover;
+}
+
+.kazakhstan {
+    background-image: url("../static/image/download-3.png");
+    background-size: cover;
+}
+
+
+
+input[type=submit] {
+    width: 100px;
+    margin-left: 4px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type=submit]:hover {
+   background-color: #c4d8e3;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+
+@media(max-width: 1100px) {
+    .nav-item{
+        display: none;
+    }
+
+    .about{
+        display: block;
+    }
+}
+
+@media(max-width: 1000px) {
+    .block-inner {
+        display: block;
+        height: 50vh;
+        width: 84vw;
+        background: radial-gradient(101.11% 635.46% at 100% -1.79%, rgba(255, 255, 255, 0.12) 0%, rgba(179, 179, 179, 0.12) 100%)
+        
+    }
+    
+    
+    .imga {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .rhalf {
+        width: 100%;
+        padding: 0;
+    }
+}

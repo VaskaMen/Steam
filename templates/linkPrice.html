@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+{% include 'header.html' %}
+
+<div class="name">
+    <div class="container">
+        <p id="big_name">Enter game link</p>
+    </div>
+</div>
+
+<div class="block"> 
+    <div class="container">
+        <div class="block-inner">
+            <div class="imga" id="image" style="background-image: url({{url_for('static', filename='image/pip.png')}})"></div>
+            {% include 'priceTab.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

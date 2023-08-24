@@ -1,0 +1,24 @@
+.error_box{
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+
+
+    position: absolute;
+
+    z-index: 1000;
+}
+
+.error {
+    height: 10vh;
+    width: 10vw;
+
+    background-color: rgb(122, 32, 32);
+    color: aliceblue;
+
+    text-align: center;
+    font-size: 10px;
+}

@@ -1,0 +1,52 @@
+<div class=rhalf> 
+    <div class="price">
+        {% if name_game is defined %}
+        Price of: {{name_game}}
+        {% else %}
+        <span>Price of:</span>
+        <span id="name">ENTER THE GAME</span>
+        {% endif %}
+
+        <div class="cases">
+            <!-- USA -->
+            <div class="plash">
+                <div class="flag usa"></div>
+                <div class="nazwa">USA</div>
+                <div class="cena" id="usa">
+                    0
+                </div>
+            </div>
+
+            <!-- RUS -->
+            <div class="plash">
+                <div class="flag russia"></div>
+                <div class="nazwa">Russia</div>
+                <div class="cena" id="ru">
+                    0
+                </div>
+            </div>
+
+            <!-- TRY -->
+            <div class="plash">
+                <div class="flag turkey"></div>
+                <div class="nazwa">
+                    Turkey
+                </div>
+                <div class="cena" id="try">
+                    0
+                </div>
+            </div>
+
+            <!-- KZT -->
+            <div class="plash">
+                <div class="flag kazakhstan"></div>
+                <div class="nazwa">
+                    Kazakhstan
+                </div>
+                <div class="cena" id="kzt">
+                  0
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

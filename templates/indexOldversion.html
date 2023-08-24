@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet">
+    <title>steamprice</title>
+</head>
+<body>
+    <div class="header">
+      
+       <div class="container container2">
+       
+        <div class="header-line header-line2">
+                
+                <div class="header-logo">
+                    <img src="{{url_for('static', filename='image/1.png')}}" width="60" height="60" alt="">
+                </div>
+            
+            <div class="search-box search-box2">
+                <form action="/" method="post">
+                    <input type="text" name="link" class="search-txt" placeholder="">
+                    <!-- <a href="#" type="submit" class="search-button search-button2"><svg width="20" height="25" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.8001 0.105279C6.20523 0.105279 0.0250244 6.52805 0.0250244 14.4211C0.0250244 22.3141 6.20523 28.7368 13.8001 28.7368C16.5374 28.7368 19.0845 27.8933 21.2312 26.4567L30.142 35.7172C31.2881 36.9083 33.1466 36.9083 34.292 35.7172C35.4381 34.5261 35.4381 32.5953 34.292 31.4043L25.3812 22.1438C26.7636 19.9129 27.5753 17.2657 27.5753 14.4211C27.5753 6.52805 21.3951 0.105279 13.8001 0.105279ZM13.8001 5.83159C18.357 5.83159 22.0652 9.6854 22.0652 14.4211C22.0652 19.1567 18.357 23.0105 13.8001 23.0105C9.24334 23.0105 5.53507 19.1567 5.53507 14.4211C5.53507 9.6854 9.24334 5.83159 13.8001 5.83159Z" fill="#1D2A38"/>
+                    </svg>
+                    </a> -->
+                    <input type="submit">
+                </form>
+                
+               
+            </div>
+            
+               <div class="nav">
+                  <a class="nav-item2" href="@">Help us</a>
+                   <a class="nav-item1" href="@">FAQ</a>
+                   <a class="nav-item" href="@">About us</a> 
+               </div>
+        </div>
+        
+        <div class="header-down">
+            {% if name_game is defined %}
+            <div class="header-title1 h-t12">
+                {{name_game}}
+            </div>
+            {% else %}
+            <div class="header-title1 h-t12">
+                Enter game link
+             </div>
+             <div class="header-title2 h-t22">
+                to find price
+             </div>
+            {% endif %}
+        </div>
+             
+        <div class="block"> 
+             <div class="block-inner">
+
+                {% if image is defined%}
+                <div class="imga" style="background-image:url({{image}})"></div> 
+                {%else%}
+                <div class="imga" style="background-image:url({{url_for('static', filename='image/pip.png')}})"></div> 
+                {% endif %}
+            <div class=shalf>
+                 <!-- <div class="texto">
+                  Enter the link
+                 </div> -->
+                
+                <div class="price">
+                    {% if name_game is defined %}
+                    Price of: {{name_game}}
+                    {% else %}
+                    Price of: Enter the game
+                    {% endif%}
+                    <div class="cases">
+                        <div class="plash">
+                            <div class="flag usa">
+                                
+                            </div>
+                            <div class="nazwa">
+                                USA
+                            </div>
+                            <div class="final_price">
+                                
+                            </div>
+                            <div class="cena">
+                                {% if poluchiUSA is defined%}
+                                    {{poluchiUSA["final_formatted"]}}
+                                {% else %}
+                                    0
+                                {% endif%}
+                            </div>
+                            
+                        </div>
+                        <div class="plash">
+                            <div class="flag russia">
+                                
+                            </div>
+                            <div class="nazwa">
+                                Russia
+                            </div>
+                            <div class="final_price">
+                                
+                            </div>
+                            <div class="cena">
+                                {% if poluchiRU is defined%}
+                                {{poluchiRU["final_formatted"]}}
+                                {% else %}
+                                0
+                            {% endif%}
+                            </div>
+                        </div>
+                        <div class="plash">
+                            <div class="flag turkey">
+                                
+                            </div>
+                            <div class="nazwa">
+                                Turkey
+                            </div>
+                            <div class="final_price">
+                                
+                            </div>
+                            <div class="cena">
+                                {% if poluchiTR is defined%}
+                                {{poluchiTR["final_formatted"]}}
+                                {% else %}
+                                0
+                                {% endif%}
+                            </div>
+                        </div>
+                        <div class="plash">
+                            <div class="flag kazakhstan">
+                                
+                            </div>
+                            <div class="nazwa">
+                                Kazakhstan
+                            </div>
+                            <div class="final_price">
+                                
+                            </div>
+                            <div class="cena">
+                                {% if poluchiKZ is defined%}
+                                {{poluchiKZ["final_formatted"]}}
+                                {% else %}
+                                 0
+                                {% endif%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            </div>
+        </div>
+            
+        </div>
+       </div>
+    </div>
+</body>
+</html>
