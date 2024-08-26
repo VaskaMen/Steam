@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+{% include 'header.html' %}
+
+<div style="display:flex, flex-wrap:warap">
+{% for i in data %}
+
+<div>
+    <h1>{{data[i]['name']}}</h1>
+    <img src="https://cdn.akamai.steamstatic.com/steam/apps/{{data[i]['app_id']}}/header.jpg">
+    <h3>{{data[i]['final_formatted']}}</h3>
+    <br>
+</div>
+{%  endfor %}
+</div>
+{% endblock %}

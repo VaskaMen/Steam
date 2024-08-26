@@ -1,3 +1,6 @@
+import json
+import random
+
 import requests
 import asyncio
 from flask import Flask, render_template, request, jsonify
@@ -9,13 +12,23 @@ from SteamDB import  SteamDB
 c = Currency()
 sp = SteamPrice()
 sdb = SteamDB()
-# sdb.add_list_game()
+sdb.add_list_game()
 
 app = Flask(__name__)
 @app.route("/", methods=["POST", "GET"])
 def home():
     return render_template("linkPrice.html")
 
+
+# games = sdb.all_last_price('RU')
+# @app.route("/test", methods=["POST", "GET"])
+# def test():
+#     ll = {}
+#     for i in range(50):
+#         key = random.choice(list(games.keys()))
+#         data = sdb.get_game_info(key, "RU")
+#         ll[f"{key}"] = data
+#     return render_template("test.html", data=ll)
 
 async def get_dlc(dlc):
         print(dlc)
